@@ -26,23 +26,25 @@ body {
     gap: 2vw;
 }
 
+
+/* Larger flower container to ensure no clipping */
+.flower-container-wrapper {
+    width: 50vw;
+    /* Larger container */
+
+    /* Larger container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
 /* SVG Flower */
 svg {
     width: 60vw;
     /* Increase maximum size */
     transition: transform 0.3s ease;
 }
-
-
-/* Sliders container */
-.sliders {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-}
-
-
 
 
 /* Individual petal class colors */
@@ -81,7 +83,14 @@ svg {
     transform-origin: center;
 }
 
-/* Empirical Reasoning (Yellow) */
+
+/* Sliders container */
+.sliders {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
 
 /* Sliders styling */
 .slider-label {
@@ -91,12 +100,6 @@ svg {
 
 .slider {
     width: 200px;
-}
-
-::-webkit-slider-runnable-track {
-    height: 15px;
-    border-radius: 15px;
-    color: #40E0D0;
 }
 
 #slider1 {
@@ -204,17 +207,6 @@ svg {
     margin-bottom: 10px;
 }
 
-/* Larger flower container to ensure no clipping */
-.flower-container-wrapper {
-    width: 50vw;
-    /* Larger container */
-
-    /* Larger container */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
 
 .plug {
     text-align: center;
