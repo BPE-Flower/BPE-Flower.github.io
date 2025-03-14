@@ -18,43 +18,10 @@ body {
     margin: 0%;
 }
 
-.save-graph-button {
-    background-color: #4CAF50;
-    position: fixed;
-    top: 5px;
-    left: 5px;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    width: 125px;
-}
-
-.save-page-button {
-    background-color: #4CAF50;
-    position: fixed;
-    top: 50px;
-    left: 5px;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    width: 125px;
-}
 
 /* Flower and sliders container */
 .flower-container {
-    display: inline-flex;
+    display: inline-block;
     justify-content: center;
     align-items: center;
     gap: 2vw;
@@ -64,9 +31,6 @@ body {
 /* Larger flower container to ensure no clipping */
 .flower-container-wrapper {
     width: 50vw;
-    /* Larger container */
-
-    /* Larger container */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,7 +41,6 @@ body {
 svg {
     width: 60vw;
     background: transparent;
-    /* Increase maximum size */
     transition: transform 0.3s ease;
 }
 
@@ -124,7 +87,7 @@ svg {
 .sliders {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 15px;
 }
 
@@ -142,10 +105,10 @@ svg {
 
 /* Input boxes container */
 .input-container {
-    display: flex;
-    flex-wrap: wrap;
-    /* Ensure inputs wrap to a new row */
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    justify-content: space-around;
     width: 100%;
     gap: 10px;
     margin-top: 30px;
@@ -154,12 +117,12 @@ svg {
 .input-box-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: end;
     gap: 5px;
 }
 
 #input-box-wrapper1 {
-    align-items: baseline;
+    align-items: center;
     background-color: rgba(255, 99, 132, 1);
     border-radius: 18px;
     padding: 8px;
@@ -167,7 +130,7 @@ svg {
 }
 
 #input-box-wrapper2 {
-    align-items: baseline;
+    align-items: center;
     background-color: rgba(54, 162, 235, 1);
     border-radius: 18px;
     padding: 8px;
@@ -175,7 +138,7 @@ svg {
 }
 
 #input-box-wrapper3 {
-    align-items: baseline;
+    align-items: center;
     background-color: rgba(242, 242, 42, 1);
     border-radius: 18px;
     padding: 8px;
@@ -183,7 +146,7 @@ svg {
 }
 
 #input-box-wrapper4 {
-    align-items: baseline;
+    align-items: center;
     background-color: rgba(75, 192, 192, 1);
     border-radius: 18px;
     padding: 8px;
@@ -191,7 +154,7 @@ svg {
 }
 
 #input-box-wrapper5 {
-    align-items: baseline;
+    align-items: center;
     background-color: rgba(153, 102, 255, 1);
     border-radius: 18px;
     padding: 8px;
@@ -199,7 +162,7 @@ svg {
 }
 
 #input-box-wrapper6 {
-    align-items: baseline;
+    align-items: center;
     background-color: rgba(255, 159, 64, 1);
     border-radius: 18px;
     padding: 8px;
@@ -208,10 +171,9 @@ svg {
 
 /* Input boxes styling */
 .input-box {
-    width: 20vw;
-    padding: 15px;
-
+    width: 100%;
     border-radius: 10px;
+    padding: auto;
     font-size: 16px;
     border: 2px solid transparent;
     transition: border-color 0.3s ease;
@@ -219,40 +181,39 @@ svg {
     resize: vertical;
     word-break: keep-all;
     line-break: normal;
-    /* Allow vertical resizing */
 }
 
-/* Border color based on petal */
+
 #input-box1 {
     border-color: rgba(255, 99, 132, 1);
 }
 
-/* Social Reasoning (Purple) */
+
 #input-box2 {
     border-color: rgba(54, 162, 235, 1);
 }
 
-/* Knowing How to Learn (Orange) */
+
 #input-box3 {
     border-color: rgba(242, 242, 42, 1);
 }
 
-/* Personal Qualities (Pink) */
+
 #input-box4 {
     border-color: rgba(75, 192, 192, 1);
 }
 
-/* Quantitative Reasoning (Blue) */
+
 #input-box5 {
     border-color: rgba(153, 102, 255, 1);
 }
 
-/* Communication (Green) */
+
 #input-box6 {
     border-color: rgba(255, 159, 64, 1);
 }
 
-/* Empirical Reasoning (Yellow) */
+
 
 /* Styling the input boxes when they are focused */
 .input-box:focus {
@@ -268,39 +229,14 @@ svg {
     margin-bottom: 10px;
 }
 
-
-.plug {
-    text-align: center;
-    align-items: center;
-    margin-top: 20px;
-    display: inline-flex;
-}
-
-p {
-    color: #adadad;
-}
-
-.plug-logo {
-    width: 25px;
-    height: 25px;
-}
-
-.card {
-    border-radius: 18px;
-    border-color: #adadad;
-    border-style: solid;
-    border-width: 4px;
-    width: 70vw;
-    height: 40vws;
-}
-
-
-@media screen and (max-width: 1000px) {
-    .flower-container {
-        display: inline-block;
+@media (min-width: 600px) {
+    .input-container {
+        grid-template-columns: repeat(2, 1fr);
     }
+}
 
-    .input-box {
-        width: 50vw;
+@media (min-width: 900px) {
+    .input-container {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
