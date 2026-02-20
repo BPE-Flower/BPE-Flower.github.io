@@ -18,6 +18,15 @@ body {
     margin: 0%;
 }
 
+.info_icon {
+    width: 15px;
+    height: 15px;
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
 .save-graph-button {
     background-color: #4CAF50;
     position: fixed;
